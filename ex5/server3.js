@@ -10,6 +10,10 @@ let posts = [
 
 let nextId = posts.length > 0 ? Math.max(...posts.map(t => t.Id)) + 1 : 1;
 
+app.get("/", (req, res) => {
+    res.send("Gerenciando Posts em um Blog");
+});
+
 app.post('/posts', (req, res) => {
     const { titulo, conteudo, autor } = req.body;
     const novoPost = {
