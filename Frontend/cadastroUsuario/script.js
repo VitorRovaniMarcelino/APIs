@@ -1,17 +1,38 @@
-fetch("http://localhost:3000/usuario").then(async res=>{
-    if(!res.ok){
-        throw new Error("Erro ao buscar usuários");
-    }
 
-    return res.json();
-}).then(usuarios=>{
-    const listaUsuarios = document.getElementById("lista-usuarios");
-    usuarios.forEach(usuario => {
-        console.log(usuario.Nome);
-        listaUsuarios.innerHTML += `<li class="list-group-item">${usuario.Nome}</li>`;
-    });
+function cadastroUsuario(event) {
+    event.preventDefault();
 
-})
-.catch(err=>{
-    console.error(err);
-});   
+    // console.log(event);
+    // console.log(event.target);
+    // console.log(event.target.nome);
+    // console.log(event.target.nome.value);
+
+    let nome = event.target.nome.value;
+    let idade = event.target.idade.value;
+    let senha = event.target.senha.value;
+
+    fetch('http://localhost:3000/usuarios', {
+
+        method: 'POST',
+
+        headers: {
+
+            'Content-Type': 'application/json'
+
+        },
+
+        body: JSON.stringify({
+            "Nome": nome,
+            "Idade": idade,
+            "Senha": senha
+        })
+
+    })
+
+        .then(response => response.json())
+
+        .then(data => console.log(data))
+
+        .catch(error => console.log(error));
+
+}
