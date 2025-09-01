@@ -1,0 +1,18 @@
+/*.forms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}*/
+
+.botoes{
+    display: flex;
+    justify-content: space-between;
+}
+
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

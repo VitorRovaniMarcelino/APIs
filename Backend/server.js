@@ -10,10 +10,13 @@ app.use(express.json()); // Para permitir receber json nas requisições
 app.use(cors());
 
 const usuarios = [
-    {"Id": 1, "Nome": "Rovani", "Idade": 18, "Senha": "456"},
-    {"Id": 2, "Nome": "Pedro", "Idade": 15, "Senha": "789"},
+    {"id": 1, "nome": "Rovani", "idade": 18, "Senha": "456"},
+    {"id": 2, "nome": "Pedro", "idade": 15, "Senha": "789"}
 
 ]
+
+let nextId = 3;
+
 
 // request - requisição
 // response - resposta
@@ -31,7 +34,7 @@ app.get("/usuario", (req, res) => {
 app.get("/usuario/:id", (req, res) => {
     const id = parseInt(req.params.id);
 
-    const usuario = usuarios.find(usuario => usuario.Id == id);
+    const usuario = usuarios.find(usuario => usuario.id == id);
 
     if(usuario != null){
         res.send(usuario)
@@ -45,7 +48,7 @@ app.post("/usuarios", (req, res) => {
     //body - corpo da requisição (Fica "Invisivel")
     //params - parametros (fica na url)
     const novoUsuario = req.body;
-    novoUsuario.id = usuarios.length + 1;
+    novoUsuario.id = nextId++;
     usuarios.push(novoUsuario);
 
 
@@ -60,7 +63,7 @@ app.put("/usuarios/:id", (req, res) => {
 
     if(index != null){
         usuarios[index] = novoUsuario;
-        res.status(204).send(novoUsuario);
+        res.status(200).send(novoUsuario);
     }else{
         res.status(404).send("Usuário não encontrado!")
     }

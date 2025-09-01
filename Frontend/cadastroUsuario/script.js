@@ -1,4 +1,3 @@
-
 function cadastroUsuario(event) {
     event.preventDefault();
 
@@ -22,16 +21,21 @@ function cadastroUsuario(event) {
         },
 
         body: JSON.stringify({
-            "Nome": nome,
-            "Idade": idade,
-            "Senha": senha
+            "nome": nome,
+            "idade": idade,
+            "senha": senha
         })
 
     })
 
         .then(response => response.json())
 
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            alert("Usuário cadastrado com sucesso!");
+            window.location.href = "../index.html";
+        })
+
 
         .catch(error => console.log(error));
 
