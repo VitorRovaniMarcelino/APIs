@@ -1,14 +1,17 @@
 function cadastroUsuario(event) {
     event.preventDefault();
 
-    // console.log(event);
-    // console.log(event.target);
-    // console.log(event.target.nome);
-    // console.log(event.target.nome.value);
-
     let nome = event.target.nome.value;
     let idade = event.target.idade.value;
     let senha = event.target.senha.value;
+    let cep = event.target.cep.value;
+    let rua = event.target.rua.value;
+    let bairro = event.target.bairro.value;
+    let cidade = event.target.cidade.value;
+    let uf = event.target.uf.value;
+    let numero = event.target.numero.value;
+
+
 
     fetch('http://localhost:3000/usuarios', {
 
@@ -23,7 +26,13 @@ function cadastroUsuario(event) {
         body: JSON.stringify({
             "nome": nome,
             "idade": idade,
-            "senha": senha
+            "senha": senha,
+            "cep": cep,
+            "rua": rua,
+            "bairro": bairro,
+            "cidade": cidade,
+            "uf": uf,
+            "numero": numero
         })
 
     })

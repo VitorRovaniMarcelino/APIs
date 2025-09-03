@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
             nome.value = data.nome;
             idade.value = data.idade;
             senha.value = data.senha;
+            cep.value = data.cep;
+            rua.value = data.rua;
+            bairro.value = data.bairro;
+            cidade.value = data.cidade;
+            uf.value = data.uf;
+            numero.value = data.numero;
 
         })
 
@@ -38,7 +44,14 @@ function atualizarUsuario(event) {
         body: JSON.stringify({
             nome: nome.value,
             idade: idade.value,
-            senha: senha.value
+            senha: senha.value,
+            cep: cep.value,
+            rua: rua.value,
+            bairro: bairro.value,
+            cidade: cidade.value,
+            uf: uf.value,
+            numero: numero.value
+
         })
 
     })

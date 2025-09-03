@@ -26,12 +26,38 @@
         <label for="senha" class="form-label">Senha</label>
         <input type="password" class="form-control" id="senha">
       </div>
+      <div class="mb-3">
+        <label for="cep" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="cep" onblur="pesquisacep(this.value)">
+      </div>
+      <div class="mb-3">
+        <label for="rua" class="form-label">Rua</label>
+        <input type="text" class="form-control" id="rua" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="bairro" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="bairro" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="cidade" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="estado" class="form-label">Estado</label>
+        <input type="text" class="form-control" id="uf" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="numero" class="form-label">Número</label>
+        <input type="number" class="form-control" id="numero">
+      </div>
+
       <div class="botoes">
         <a href="../index.html" class="btn btn-danger">Voltar</a>
         <button type="submit" class="btn btn-primary">Atualizar</button>
       </div>
     </form>
   </div>
+  <script src="../cep.js"></script>
   <script src="script.js"></script>
 </body>
 
