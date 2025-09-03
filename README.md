@@ -16,6 +16,5 @@ Uma API simples em **JavaScript** para gerenciar usuários, permitindo cadastro,
 - Express
 - Cors
 - Fetch
-- Banco de dados: SQLite, MongoDB ou MySQL (dependendo da implementação)
 
 ## Estrutura do Projeto
